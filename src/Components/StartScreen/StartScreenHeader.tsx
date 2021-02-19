@@ -1,5 +1,5 @@
 import "../../styles/utility-styles.css";
-import "./StartScreenStyles/StartScreenHeaderStyles.css";
+import "./StartScreenStyles.css";
 
 export const StartScreenHeader = () => {
   return (

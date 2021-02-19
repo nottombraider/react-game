@@ -5,7 +5,7 @@ import StartScreen from "./Components/StartScreen/StartSreen";
 
 const FlagQuizGame = () => {
   return (
-    <div>
+    <div className="flag-quiz-game-wrapper">
       <StartScreen />
     </div>
   );
