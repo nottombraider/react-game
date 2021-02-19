@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { StartScreenHeader } from "./Components/StartScreen/StartScreenHeader";
 import "./styles/utility-styles.css";
-import StartScreen from "./Components/StartScreen/StartSreen";
+import StartScreen from "./Components/StartScreen/StartScreen";
 
 const FlagQuizGame = () => {
   return (
