@@ -1,0 +1,28 @@
+.start-screen-header {
+  box-shadow: 0 0.5rem 2rem -0.1rem #a4a4a4;
+}
+
+.start-screen-header__text-logo {
+  font-size: 5rem;
+  position: relative;
+}
+
+.start-screen-header__sub-text {
+  font-size: 1.3rem;
+  transform: rotate(-35deg);
+  position: absolute;
+  left: -2rem;
+  top: 0.7rem;
+  color: #c70104;
+  border: 2px solid #c70104;
+}
+
+.music-header-icon,
+.sounds-header-icon {
+  font-size: 2rem;
+  margin-left: 1rem;
+}
+
+.game-header-icon {
+  font-size: 3rem;
+}
