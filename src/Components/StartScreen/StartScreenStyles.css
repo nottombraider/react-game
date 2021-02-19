@@ -17,15 +17,11 @@
   border: 2px solid #c70104;
 }
 
-.music-header-icon,
-.sounds-header-icon {
+.header-icon {
   font-size: 2rem;
   margin-left: 1rem;
 }
 
 .game-header-icon {
   font-size: 3rem;
-}
-
-.start-screen-main {
 }

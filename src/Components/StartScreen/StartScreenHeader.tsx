@@ -1,5 +1,8 @@
 import "../../styles/utility-styles.css";
 import "./StartScreenStyles.css";
+import AudioPlayControlButton from "./AudioPlayControlButton";
+
+const AUDIO_CONTROL_ICONS: string[] = ["music", "sounds"];
 
 export const StartScreenHeader = () => {
   return (
@@ -9,12 +12,9 @@ export const StartScreenHeader = () => {
         Flag Quiz <span className="game-header-icon">&#127918;</span>
       </h1>
       <div>
-        <button className="music-header-icon" aria-label="Music button">
-          <span>&#128264;</span>
-        </button>
-        <button className="sounds-header-icon" aria-label="Sounds button">
-          <span>&#127926;</span>
-        </button>
+        {AUDIO_CONTROL_ICONS.map((buttonId) => (
+          <AudioPlayControlButton id={buttonId} />
+        ))}
       </div>
     </header>
   );
