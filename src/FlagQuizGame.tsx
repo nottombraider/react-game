@@ -1,14 +1,9 @@
-import React, { useState, useEffect } from "react";
-import { StartScreenHeader } from "./Components/StartScreen/StartScreenHeader";
+import React from "react";
 import "./styles/utility-styles.css";
-import StartScreen from "./Components/StartScreen/StartScreen";
+import { Routes } from "./Pages/routes";
 
 const FlagQuizGame = () => {
-  return (
-    <div className="flag-quiz-game-wrapper">
-      <StartScreen />
-    </div>
-  );
+  return <Routes />;
 };
 
 export default FlagQuizGame;
