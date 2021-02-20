@@ -11,11 +11,11 @@ export const StartScreenHeader = () => {
         <span className="start-screen-header__sub-text">one more</span>
         Flag Quiz <span className="game-header-icon">&#127918;</span>
       </h1>
-      <div>
-        {AUDIO_CONTROL_ICONS.map((buttonId) => (
-          <AudioPlayControlButton id={buttonId} />
+      <ul className="flex start-screen-header__button-container">
+        {AUDIO_CONTROL_ICONS.map((buttonKey) => (
+          <AudioPlayControlButton id={buttonKey} key={buttonKey} />
         ))}
-      </div>
+      </ul>
     </header>
   );
 };
