@@ -16,5 +16,5 @@ export const useMusicControl = (musicURL: string) => {
       audioPlayer.removeEventListener("ended", () => setAudioStatus(false));
   });
 
-  return [audioStatus, toggleAudio];
+  return { audioStatus, toggleAudio };
 };

@@ -25,3 +25,7 @@
 .game-header-icon {
   font-size: 3rem;
 }
+
+.start-screen-header__button-container {
+  list-style: none;
+}
