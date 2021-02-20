@@ -7,12 +7,15 @@ const AUDIO_CONTROL_ICONS: string[] = ["music", "sounds"];
 
 export const Header = () => {
   return (
-    <header className="flex align-center space-around start-screen-header">
-      <h1 className="start-screen-header__text-logo">
-        <span className="start-screen-header__sub-text">one more</span>
-        Flag Quiz <span className="game-header-icon">&#127918;</span>
-      </h1>
-      <ul className="flex start-screen-header__button-container">
+    <header className="header flex align-center space-around ">
+      <div className="header__logo">
+        <span className="header__sub-text">one more</span>
+        <h1 className="header__text-logo">
+          Flag Quiz <span className="game-header-icon">&#127918;</span>
+        </h1>
+      </div>
+
+      <ul className="header__button-container flex ">
         {AUDIO_CONTROL_ICONS.map((buttonKey) => (
           <AudioPlayControlButton id={buttonKey} key={buttonKey} />
         ))}

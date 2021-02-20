@@ -1,18 +1,23 @@
-.start-screen-header {
+.header {
   box-shadow: 0 0.5rem 2rem -0.1rem #a4a4a4;
 }
 
-.start-screen-header__text-logo {
-  font-size: 5rem;
+.header__logo {
   position: relative;
+  margin: 1rem;
 }
 
-.start-screen-header__sub-text {
-  font-size: 1.3rem;
-  transform: rotate(-35deg);
+.header__text-logo {
+  font-size: 3rem;
+}
+
+.header__sub-text {
+  font-size: 1rem;
+  font-weight: 900;
+  transform: rotate(-25deg);
   position: absolute;
-  left: -2rem;
-  top: 0.7rem;
+  left: -1rem;
+  top: 1.5rem;
   color: #c70104;
   border: 2px solid #c70104;
 }
@@ -23,9 +28,9 @@
 }
 
 .game-header-icon {
-  font-size: 3rem;
+  font-size: 2.5rem;
 }
 
-.start-screen-header__button-container {
+.header__button-container {
   list-style: none;
 }
