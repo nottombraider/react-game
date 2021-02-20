@@ -1,10 +1,11 @@
-import "../../styles/utility-styles.css";
-import "./StartScreenStyles.css";
-import AudioPlayControlButton from "./AudioPlayControlButton";
+import React from "react";
+import AudioPlayControlButton from "Pages/StartScreen/AudioPlayControlButton";
+import "../styles/utility-styles.css";
+import "./styles-Header.css";
 
 const AUDIO_CONTROL_ICONS: string[] = ["music", "sounds"];
 
-export const StartScreenHeader = () => {
+export const Header = () => {
   return (
     <header className="flex align-center space-around start-screen-header">
       <h1 className="start-screen-header__text-logo">
