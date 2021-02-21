@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-type CountryFlag = { country: string; flag: string };
+type CountryFlag = { name: string; flag: string };
 type CountryFlags = Array<CountryFlag>;
 type UseCountryFlagsReturnType = [
   countryFlags: CountryFlags,
