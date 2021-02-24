@@ -1,29 +1,17 @@
+import { FunctionComponent } from "react";
 import { RouteComponentProps } from "@reach/router";
 import { DefaultLayout } from "Layouts/DefaultLayout";
-import { FunctionComponent } from "react";
-import { getVariants } from "utils";
 import { useCountryFlags } from "./useCountryFlags";
+import "./main-game-screen.css";
+import { GameStepper } from "./GameStepper";
 
 export const MainGameScreen: FunctionComponent<RouteComponentProps> = () => {
   const [countryFlags, isLoading] = useCountryFlags();
-  const countryFlagsVariants = getVariants(countryFlags, 4);
-  const [correctAnswer] = countryFlagsVariants;
 
   if (isLoading) return <h1>Loading game...</h1>;
   return (
     <DefaultLayout>
-      <main>
-        <figure>
-          <img src={correctAnswer.flag} alt="flag" />
-        </figure>
-        <ul>
-          {countryFlagsVariants.map((countryFlagVariant) => (
-            <li key={countryFlagVariant.name}>
-              <button>{countryFlagVariant.name}</button>
-            </li>
-          ))}
-        </ul>
-      </main>
+      <GameStepper countryFlags={countryFlags} />
     </DefaultLayout>
   );
 };
