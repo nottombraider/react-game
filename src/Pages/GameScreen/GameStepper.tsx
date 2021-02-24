@@ -3,6 +3,7 @@ import { navigate } from "@reach/router";
 import { RoutPaths } from "Pages/routes";
 import { getVariants } from "utils";
 import { CountryFlags } from "./useCountryFlags";
+import arrayShuffle from "array-shuffle";
 
 type GameStepperProps = {
   countryFlags: CountryFlags;
@@ -13,11 +14,16 @@ export const GameStepper = ({ countryFlags }: GameStepperProps) => {
   const [userFlags, setUserFlags] = useState(countryFlags);
   const countryFlagsVariants = getVariants(userFlags, countryFlags, 3);
   const [correctAnswer] = countryFlagsVariants;
+  const shuffledFlagsVariants = arrayShuffle(countryFlagsVariants);
 
   const handleChosenAnswer = (event: MouseEvent<HTMLButtonElement>) => {
     //@ts-ignore
     const chosenAnswer = event.target.innerText;
     if (chosenAnswer === correctAnswer.name) {
+      const updatedUserFlags = [...userFlags];
+      const correctAnswerIndex = updatedUserFlags.indexOf(correctAnswer);
+      updatedUserFlags.splice(correctAnswerIndex, 1);
+      setUserFlags(updatedUserFlags);
       setScore(score + 10);
     } else {
       navigate(RoutPaths.GameOver);
@@ -34,7 +40,7 @@ export const GameStepper = ({ countryFlags }: GameStepperProps) => {
         </div>
       </div>
       <ul>
-        {countryFlagsVariants.map((countryFlagVariant) => (
+        {shuffledFlagsVariants.map((countryFlagVariant) => (
           <li key={countryFlagVariant.name}>
             <button
               onClick={handleChosenAnswer}
