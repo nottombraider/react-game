@@ -1,18 +1,40 @@
 import { getRandomNumber } from "utils";
 
-export const getVariants = <ItemType extends {}>(
+const getPlayVariant = <ItemType extends {}>(items: Array<ItemType>) => {
+  const randomIndex = getRandomNumber(0, items.length);
+  return items[randomIndex];
+};
+
+const getOtherVariants = <ItemType extends {}>(
   items: Array<ItemType>,
   amount: number
 ) => {
-  const possibleAnswers = [...items];
-  const results: Array<ItemType> = [];
+  const allItems = [...items];
+  const otherVariants = [];
 
   while (amount--) {
-    const randomItemIndex = getRandomNumber(0, possibleAnswers.length - 1);
-    const result = possibleAnswers[randomItemIndex];
-    results.push(result);
-    items.splice(randomItemIndex, 1);
+    const randomIndex = getRandomNumber(0, allItems.length);
+    const result = allItems[randomIndex];
+    otherVariants.push(result);
+    allItems.splice(randomIndex, 1);
   }
 
-  return results;
+  return otherVariants;
+};
+
+export const getVariants = <ItemType extends { name: string }>(
+  userItems: Array<ItemType>,
+  allItems: Array<ItemType>,
+  otherVariantsAmount: number
+) => {
+  const userPlayVariant = getPlayVariant(userItems);
+  const itemsWithoutPlayVariant = allItems.filter(
+    (item) => item.name !== userPlayVariant.name
+  );
+  const otherVariants = getOtherVariants(
+    itemsWithoutPlayVariant,
+    otherVariantsAmount
+  );
+
+  return [userPlayVariant, ...otherVariants];
 };
