@@ -1,0 +1,29 @@
+.loading-screen {
+  text-align: center;
+}
+
+.loading-main-text {
+  font-size: 3rem;
+  margin: 1rem;
+  color: #333333;
+}
+
+.loading-circle {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  border: 5px solid #eeeeee;
+  border-left-color: pink;
+  border-top-color: pink;
+  animation: rotate 500ms infinite linear;
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+.loading-secondary-text {
+  color: #c1c1c1;
+}
