@@ -1,0 +1,12 @@
+.footer {
+  box-shadow: 0 0.5rem 2rem -0.1rem #a4a4a4;
+  padding: 1rem 0 0 0.7rem;
+}
+
+.footer-logo {
+  width: 200px;
+}
+
+.footer-rsschool-logo {
+  width: 75px;
+}
