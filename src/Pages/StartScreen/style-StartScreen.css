@@ -1,0 +1,16 @@
+.main-game-button {
+  margin-bottom: 4rem;
+  font-size: 2rem;
+  text-transform: uppercase;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+}
+
+.main-game-button:hover {
+  border-block-start-color: #ffc0cb;
+  border-inline-end-color: #ffc0cb;
+  border-block-end-color: #ffc0cb;
+  border-inline-start-color: #ffc0cb;
+  color: #d87093;
+  background-color: #ffe2e7;
+}
