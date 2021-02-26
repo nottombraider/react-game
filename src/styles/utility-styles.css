@@ -1,15 +1,21 @@
 .flag-quiz-game-wrapper {
   max-width: 1024px;
-  max-height: 768px;
+  height: 100vh;
+  max-height: 868px;
+  min-width: 320px;
+  background-color: #fff;
 }
 
-.footer-img {
-  width: 75px;
-  height: auto;
+.main-content-wrapper {
+  height: inherit;
 }
 
 .flex {
   display: flex;
+}
+
+.wrap {
+  flex-wrap: wrap;
 }
 
 .column {
