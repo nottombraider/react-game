@@ -1,11 +1,12 @@
 import { FunctionComponent } from "react";
-import { RouteComponentProps } from "@reach/router";
+import { navigate, RouteComponentProps } from "@reach/router";
 import { DefaultLayout } from "Layouts/DefaultLayout";
 import { getScoreFromLocalStorage } from "utils/getScoreFromLocalStorage";
 import "./style-WinScreen.css";
 
 export const WinScreen: FunctionComponent<RouteComponentProps> = () => {
-  const userScore = getScoreFromLocalStorage();
+  const userScore = getScoreFromLocalStorage("currentScore");
+
   return (
     <DefaultLayout>
       <div className="flex column align-center">
@@ -17,6 +18,12 @@ export const WinScreen: FunctionComponent<RouteComponentProps> = () => {
           <span>Your score: </span>
           <span>{userScore.score}</span>
         </div>
+
+        <button onClick={() => navigate("/score")}>
+          Check your 10 best last scores
+        </button>
+
+        <button onClick={() => navigate("/")}>New Game</button>
       </div>
     </DefaultLayout>
   );

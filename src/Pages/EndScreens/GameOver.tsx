@@ -1,10 +1,10 @@
 import { FunctionComponent } from "react";
-import { RouteComponentProps } from "@reach/router";
+import { navigate, RouteComponentProps } from "@reach/router";
 import { DefaultLayout } from "Layouts/DefaultLayout";
 import { getScoreFromLocalStorage } from "../../utils/getScoreFromLocalStorage";
 
 export const GameOver: FunctionComponent<RouteComponentProps> = () => {
-  const score = getScoreFromLocalStorage();
+  const score = getScoreFromLocalStorage("currentScore");
 
   return (
     <DefaultLayout>
@@ -18,6 +18,12 @@ export const GameOver: FunctionComponent<RouteComponentProps> = () => {
           <span>{score.score}</span>
         </div>
       </div>
+
+      <button onClick={() => navigate("/score")}>
+        Check your 10 best last scores
+      </button>
+
+      <button onClick={() => navigate("/")}>New Game</button>
     </DefaultLayout>
   );
 };

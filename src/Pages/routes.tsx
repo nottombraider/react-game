@@ -1,5 +1,6 @@
 import { Router } from "@reach/router";
 import { GameOver } from "./EndScreens/GameOver";
+import { ScoreScreen } from "./EndScreens/ScoreScreen";
 import { WinScreen } from "./EndScreens/WinScreen";
 import { MainGameScreen } from "./GameScreen/MainGameScreen";
 import { SettingsScreen } from "./Settings/SettingsScreen";
@@ -11,6 +12,7 @@ export enum RoutPaths {
   GameOver = "/game-over",
   WinScreen = "/win-screen",
   SettingsScreen = "/settings",
+  ScoreScreen = "/score",
 }
 
 export const Routes = () => {
@@ -21,6 +23,7 @@ export const Routes = () => {
       <GameOver path={RoutPaths.GameOver} />
       <WinScreen path={RoutPaths.WinScreen} />
       <SettingsScreen path={RoutPaths.SettingsScreen} />
+      <ScoreScreen path={RoutPaths.ScoreScreen} />
     </Router>
   );
 };
