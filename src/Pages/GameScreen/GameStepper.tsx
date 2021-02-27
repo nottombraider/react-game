@@ -32,6 +32,15 @@ export const GameStepper = ({ countryFlags }: GameStepperProps) => {
   };
 
   useEffect(() => {
+    const userScores = {
+      time: new Date(),
+      score: score,
+    };
+
+    localStorage.setItem("score", JSON.stringify(userScores));
+  }, [score]);
+
+  useEffect(() => {
     if (userFlags.length === 0) {
       navigate(RoutPaths.WinScreen);
     }
