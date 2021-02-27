@@ -1,4 +1,4 @@
-import { useState, MouseEvent } from "react";
+import { useState, MouseEvent, useEffect } from "react";
 import { navigate } from "@reach/router";
 import { RoutPaths } from "Pages/routes";
 import { getVariants } from "utils";
@@ -12,12 +12,13 @@ type GameStepperProps = {
 export const GameStepper = ({ countryFlags }: GameStepperProps) => {
   const [score, setScore] = useState<number>(0);
   const [userFlags, setUserFlags] = useState(countryFlags);
+
   const countryFlagsVariants = getVariants(userFlags, countryFlags, 3);
   const [correctAnswer] = countryFlagsVariants;
   const shuffledFlagsVariants = arrayShuffle(countryFlagsVariants);
 
   const handleChosenAnswer = (event: MouseEvent<HTMLButtonElement>) => {
-    //@ts-ignore
+    // @ts-ignore
     const chosenAnswer = event.target.innerText;
     if (chosenAnswer === correctAnswer.name) {
       const updatedUserFlags = [...userFlags];
@@ -30,16 +31,28 @@ export const GameStepper = ({ countryFlags }: GameStepperProps) => {
     }
   };
 
+  useEffect(() => {
+    if (userFlags.length === 0) {
+      navigate(RoutPaths.WinScreen);
+    }
+  }, [userFlags.length]);
+
   return (
-    <main>
+    <main className="main-content-wrapper flex column align-center space-around">
       <div>
-        <img src={correctAnswer.flag} alt="flag" className="main-flag-img" />
+        {/*TODO - add border to flags*/}
+        <img
+          src={correctAnswer.flag}
+          alt="flag"
+          className="main-flag-img animate__animated animate__backInDown"
+        />
         <div>
           <span>Score: </span>
           <span>{score} points</span>
         </div>
       </div>
-      <ul>
+
+      <ul className="answer-wrapper flex">
         {shuffledFlagsVariants.map((countryFlagVariant) => (
           <li key={countryFlagVariant.name}>
             <button
