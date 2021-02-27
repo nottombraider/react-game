@@ -4,6 +4,7 @@ import { RoutPaths } from "Pages/routes";
 import { getVariants } from "utils";
 import { CountryFlags } from "./useCountryFlags";
 import arrayShuffle from "array-shuffle";
+import { getScoreFromLocalStorage } from "utils/getScoreFromLocalStorage";
 
 type GameStepperProps = {
   countryFlags: CountryFlags;
@@ -27,17 +28,38 @@ export const GameStepper = ({ countryFlags }: GameStepperProps) => {
       setUserFlags(updatedUserFlags);
       setScore(score + 10);
     } else {
+      const scoresInLocalStorageJSON = localStorage.getItem("scores");
+      const scoresInLocalStorage = scoresInLocalStorageJSON
+        ? JSON.parse(scoresInLocalStorageJSON)
+        : [];
+      const userCurrentScore = getScoreFromLocalStorage("currentScore");
+
+      if (scoresInLocalStorage.length < 10) {
+        scoresInLocalStorage.push(userCurrentScore);
+        //@ts-ignore
+        scoresInLocalStorage.sort((itemA, itemB) => itemA.score - itemB.score);
+        localStorage.setItem("scores", JSON.stringify(scoresInLocalStorage));
+      }
+
+      if (scoresInLocalStorage.length >= 10) {
+        //@ts-ignore
+        scoresInLocalStorage.sort((itemA, itemB) => itemA.score - itemB.score);
+        scoresInLocalStorage.splice(0, 1, userCurrentScore);
+        //@ts-ignore
+        scoresInLocalStorage.sort((itemA, itemB) => itemA.score - itemB.score);
+        localStorage.setItem("scores", JSON.stringify(scoresInLocalStorage));
+      }
       navigate(RoutPaths.GameOver);
     }
   };
 
   useEffect(() => {
-    const userScores = {
+    const userCurrentScore = {
       time: new Date(),
       score: score,
     };
 
-    localStorage.setItem("score", JSON.stringify(userScores));
+    localStorage.setItem("currentScore", JSON.stringify(userCurrentScore));
   }, [score]);
 
   useEffect(() => {
