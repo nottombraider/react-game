@@ -14,7 +14,12 @@ export const StartScreenMainGameControls = () => {
         >
           Start Game
         </button>
-        <button className="main-game-button">Settings</button>
+        <button
+          onClick={() => navigate(RoutPaths.SettingsScreen)}
+          className="main-game-button"
+        >
+          Settings
+        </button>
       </div>
     </main>
   );
