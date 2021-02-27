@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-type CountryFlag = { name: string; flag: string };
+type CountryFlag = { name: string; flag: string; id: number };
 export type CountryFlags = Array<CountryFlag>;
 type UseCountryFlagsReturnType = [
   countryFlags: CountryFlags,
@@ -16,9 +16,15 @@ export const useCountryFlags = (): UseCountryFlagsReturnType => {
       const response = await fetch(
         "https://countriesnow.space/api/v0.1/countries/flag/images"
       );
-      const countriesWithFlag = await response.json();
+      const responseJSON = (await response.json()) as {
+        data: Array<Omit<CountryFlag, "id">>;
+      };
 
-      setCountries(countriesWithFlag.data);
+      const countryFlagsWithId = responseJSON.data.map((item, index) => {
+        return { id: index + 1, ...item };
+      });
+
+      setCountries(countryFlagsWithId);
       setIsLoading(false);
     })();
   }, []);
