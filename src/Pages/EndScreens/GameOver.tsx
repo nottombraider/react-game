@@ -1,10 +1,10 @@
 import { FunctionComponent } from "react";
 import { navigate, RouteComponentProps } from "@reach/router";
 import { DefaultLayout } from "Layouts/DefaultLayout";
-import { getScoreFromLocalStorage } from "../../utils/getScoreFromLocalStorage";
+import { getDataFromLocalStorage } from "../../utils/getDataFromLocalStorage";
 
 export const GameOver: FunctionComponent<RouteComponentProps> = () => {
-  const score = getScoreFromLocalStorage("currentScore");
+  const score = getDataFromLocalStorage("currentScore");
 
   return (
     <DefaultLayout>

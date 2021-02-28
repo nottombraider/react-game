@@ -1,11 +1,11 @@
 import { FunctionComponent } from "react";
 import { navigate, RouteComponentProps } from "@reach/router";
 import { DefaultLayout } from "Layouts/DefaultLayout";
-import { getScoreFromLocalStorage } from "utils/getScoreFromLocalStorage";
+import { getDataFromLocalStorage } from "utils/getDataFromLocalStorage";
 import "./style-WinScreen.css";
 
 export const WinScreen: FunctionComponent<RouteComponentProps> = () => {
-  const userScore = getScoreFromLocalStorage("currentScore");
+  const userScore = getDataFromLocalStorage("currentScore");
 
   return (
     <DefaultLayout>
