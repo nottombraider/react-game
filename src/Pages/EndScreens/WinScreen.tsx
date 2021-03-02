@@ -1,11 +1,26 @@
-import { FunctionComponent } from "react";
+import { FunctionComponent, useEffect } from "react";
 import { navigate, RouteComponentProps } from "@reach/router";
 import { DefaultLayout } from "Layouts/DefaultLayout";
-import { getDataFromLocalStorage } from "utils/getDataFromLocalStorage";
 import "./style-WinScreen.css";
+import { DEFAULT_CURRENT_SCORE } from "./GameOver";
+import { CurrentScoreType } from "types";
+import { resetGameState } from "gameHandlers/resetGame";
+import {
+  getDataFromLocalStorage,
+  setScoreToTableScore,
+  StorageKeys,
+} from "utils";
 
 export const WinScreen: FunctionComponent<RouteComponentProps> = () => {
-  const userScore = getDataFromLocalStorage("currentScore");
+  const userScore = getDataFromLocalStorage<CurrentScoreType>(
+    StorageKeys.CurrentScore,
+    DEFAULT_CURRENT_SCORE
+  );
+
+  useEffect(() => {
+    setScoreToTableScore();
+    resetGameState();
+  }, []);
 
   return (
     <DefaultLayout>
