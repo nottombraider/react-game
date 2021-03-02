@@ -4,11 +4,11 @@ import { DefaultLayout } from "Layouts/DefaultLayout";
 import { CurrentScoreType } from "types";
 import { resetGameState } from "gameHandlers/resetGame";
 import "./style-GameOver.css";
+import { setScoreToTableScore } from "gameHandlers";
 import {
   getDataFromLocalStorage,
   StorageKeys,
-  setScoreToTableScore,
-} from "utils";
+} from "services/getDataFromLocalStorage";
 
 export const DEFAULT_CURRENT_SCORE: CurrentScoreType = {
   time: null,

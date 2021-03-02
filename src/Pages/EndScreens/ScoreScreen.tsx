@@ -2,7 +2,10 @@ import { FunctionComponent } from "react";
 import { DefaultLayout } from "Layouts/DefaultLayout";
 import { RouteComponentProps } from "@reach/router";
 import { ScoreListType } from "types";
-import { getDataFromLocalStorage, StorageKeys } from "utils";
+import {
+  getDataFromLocalStorage,
+  StorageKeys,
+} from "services/getDataFromLocalStorage";
 
 export const ScoreScreen: FunctionComponent<RouteComponentProps> = () => {
   const userScores = getDataFromLocalStorage<ScoreListType>(

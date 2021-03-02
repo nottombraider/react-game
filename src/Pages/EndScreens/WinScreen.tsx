@@ -5,11 +5,11 @@ import "./style-WinScreen.css";
 import { DEFAULT_CURRENT_SCORE } from "./GameOver";
 import { CurrentScoreType } from "types";
 import { resetGameState } from "gameHandlers/resetGame";
+import { setScoreToTableScore } from "gameHandlers";
 import {
   getDataFromLocalStorage,
-  setScoreToTableScore,
   StorageKeys,
-} from "utils";
+} from "services/getDataFromLocalStorage";
 
 export const WinScreen: FunctionComponent<RouteComponentProps> = () => {
   const userScore = getDataFromLocalStorage<CurrentScoreType>(
