@@ -1,11 +1,5 @@
 import { useState, useEffect } from "react";
-
-type CountryFlag = { name: string; flag: string; id: number };
-export type CountryFlags = Array<CountryFlag>;
-type UseCountryFlagsReturnType = [
-  countryFlags: CountryFlags,
-  isLoading: boolean
-];
+import { CountryFlag, CountryFlags, UseCountryFlagsReturnType } from "types";
 
 export const useCountryFlags = (): UseCountryFlagsReturnType => {
   const [countryFlags, setCountries] = useState<CountryFlags>([]);
@@ -23,7 +17,6 @@ export const useCountryFlags = (): UseCountryFlagsReturnType => {
       const countryFlagsWithId = responseJSON.data.map((item, index) => {
         return { id: index + 1, ...item };
       });
-
       setCountries(countryFlagsWithId);
       setIsLoading(false);
     })();
