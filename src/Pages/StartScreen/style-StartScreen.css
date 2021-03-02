@@ -1,16 +1,31 @@
 .main-game-button {
-  margin-bottom: 4rem;
+  margin-bottom: 2.5rem;
   font-size: 2rem;
   text-transform: uppercase;
   padding: 1rem 2rem;
   border-radius: 1rem;
+  border-block-start-color: #8a92ff;
+  border-inline-end-color: #8a92ff;
+  border-block-end-color: #8a92ff;
+  border-inline-start-color: #8a92ff;
+  background-color: #fff;
+  color: #19207b;
 }
 
 .main-game-button:hover {
-  border-block-start-color: #ffc0cb;
-  border-inline-end-color: #ffc0cb;
-  border-block-end-color: #ffc0cb;
-  border-inline-start-color: #ffc0cb;
-  color: #d87093;
-  background-color: #ffe2e7;
+  border-block-start-color: #8a92ff;
+  border-inline-end-color: #8a92ff;
+  border-block-end-color: #8a92ff;
+  border-inline-start-color: #8a92ff;
+  color: #19207b;
+  background-color: #c9d2ff;
+  box-shadow: #8a92ff;
+  box-shadow: 0 0 0.5rem #8d94ff;
+}
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .main-game-button {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+  }
 }

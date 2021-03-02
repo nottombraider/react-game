@@ -4,7 +4,7 @@ import { RoutPaths } from "Pages/routes";
 import { getVariants } from "utils";
 import { CountryFlags } from "./useCountryFlags";
 import arrayShuffle from "array-shuffle";
-import { getScoreFromLocalStorage } from "utils/getScoreFromLocalStorage";
+import { getDataFromLocalStorage } from "utils/getDataFromLocalStorage";
 
 type GameStepperProps = {
   countryFlags: CountryFlags;
@@ -21,10 +21,20 @@ export const GameStepper = ({ countryFlags }: GameStepperProps) => {
   const handleChosenAnswer = (event: MouseEvent<HTMLButtonElement>) => {
     // @ts-ignore
     const chosenAnswer = event.target.innerText;
+
     if (chosenAnswer === correctAnswer.name) {
       const updatedUserFlags = [...userFlags];
       const correctAnswerIndex = updatedUserFlags.indexOf(correctAnswer);
+      const seenFlagsJSON = localStorage.getItem("seenFlags");
+      const seenFlags: Array<number> = seenFlagsJSON
+        ? JSON.parse(seenFlagsJSON)
+        : [];
+
+      seenFlags.push(correctAnswer.id);
       updatedUserFlags.splice(correctAnswerIndex, 1);
+
+      localStorage.setItem("seenFlags", JSON.stringify(seenFlags));
+
       setUserFlags(updatedUserFlags);
       setScore(score + 10);
     } else {
@@ -32,7 +42,8 @@ export const GameStepper = ({ countryFlags }: GameStepperProps) => {
       const scoresInLocalStorage = scoresInLocalStorageJSON
         ? JSON.parse(scoresInLocalStorageJSON)
         : [];
-      const userCurrentScore = getScoreFromLocalStorage("currentScore");
+
+      const userCurrentScore = getDataFromLocalStorage("currentScore");
 
       if (scoresInLocalStorage.length < 10) {
         scoresInLocalStorage.push(userCurrentScore);
@@ -49,6 +60,9 @@ export const GameStepper = ({ countryFlags }: GameStepperProps) => {
         scoresInLocalStorage.sort((itemA, itemB) => itemA.score - itemB.score);
         localStorage.setItem("scores", JSON.stringify(scoresInLocalStorage));
       }
+
+      localStorage.removeItem("seenFlags");
+      localStorage.removeItem("currentVariants");
       navigate(RoutPaths.GameOver);
     }
   };
@@ -67,6 +81,14 @@ export const GameStepper = ({ countryFlags }: GameStepperProps) => {
       navigate(RoutPaths.WinScreen);
     }
   }, [userFlags.length]);
+
+  useEffect(() => {
+    const currentVariants = {
+      correct: correctAnswer.id,
+      answerVariants: countryFlagsVariants.map((item) => item.id),
+    };
+    localStorage.setItem("currentVariants", JSON.stringify(currentVariants));
+  }, [correctAnswer.id, countryFlagsVariants]);
 
   return (
     <main className="main-content-wrapper flex column align-center space-around">
