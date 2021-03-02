@@ -9,6 +9,7 @@ import {
   getDataFromLocalStorage,
   StorageKeys,
 } from "services/getDataFromLocalStorage";
+import { RoutPaths } from "Pages/routes";
 
 export const DEFAULT_CURRENT_SCORE: CurrentScoreType = {
   time: null,
@@ -40,11 +41,17 @@ export const GameOver: FunctionComponent<RouteComponentProps> = () => {
           </div>
         </div>
         <div className="game-over-button-container flex column justify-center">
-          <button className="button-x" onClick={() => navigate("/score")}>
+          <button
+            className="button-x"
+            onClick={() => navigate(RoutPaths.ScoreScreen)}
+          >
             Score board
           </button>
 
-          <button className="button-x" onClick={() => navigate("/")}>
+          <button
+            className="button-x"
+            onClick={() => navigate(RoutPaths.StartScreen)}
+          >
             New Game
           </button>
         </div>
