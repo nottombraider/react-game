@@ -1,4 +1,4 @@
-import { StorageKeys } from "utils/getDataFromLocalStorage";
+import { StorageKeys } from "services/getDataFromLocalStorage";
 
 export const resetGameState = () => {
   localStorage.removeItem(StorageKeys.SeenFlags);

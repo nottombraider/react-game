@@ -3,3 +3,4 @@ export * from "./getCorrectAnswerBasedOnLocalStorage";
 export * from "./getUnseenFlags";
 export * from "./resetGame";
 export * from "./getUpdatedUserFlags";
+export * from "./setScoreToTableScore";

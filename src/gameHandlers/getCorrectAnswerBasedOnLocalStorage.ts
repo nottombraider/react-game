@@ -2,7 +2,7 @@ import { CountryFlags, CurrentVariants, SeenFlagsIdList } from "types";
 import {
   getDataFromLocalStorage,
   StorageKeys,
-} from "utils/getDataFromLocalStorage";
+} from "services/getDataFromLocalStorage";
 
 export const getCorrectAnswerBasedOnLocalStorage = (
   countryFlags: CountryFlags

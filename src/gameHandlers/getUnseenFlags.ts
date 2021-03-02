@@ -2,7 +2,7 @@ import { CountryFlags, SeenFlagsIdList } from "types";
 import {
   getDataFromLocalStorage,
   StorageKeys,
-} from "utils/getDataFromLocalStorage";
+} from "services/getDataFromLocalStorage";
 
 export const getUnseenFlags = (countryFlags: CountryFlags) => {
   const seenFlagsIDs = getDataFromLocalStorage<SeenFlagsIdList>(
