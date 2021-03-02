@@ -10,6 +10,7 @@ import {
   getDataFromLocalStorage,
   StorageKeys,
 } from "services/getDataFromLocalStorage";
+import { RoutPaths } from "Pages/routes";
 
 export const WinScreen: FunctionComponent<RouteComponentProps> = () => {
   const userScore = getDataFromLocalStorage<CurrentScoreType>(
@@ -34,11 +35,13 @@ export const WinScreen: FunctionComponent<RouteComponentProps> = () => {
           <span>{userScore.score}</span>
         </div>
 
-        <button onClick={() => navigate("/score")}>
+        <button onClick={() => navigate(RoutPaths.ScoreScreen)}>
           Check your 10 best last scores
         </button>
 
-        <button onClick={() => navigate("/")}>New Game</button>
+        <button onClick={() => navigate(RoutPaths.StartScreen)}>
+          New Game
+        </button>
       </div>
     </DefaultLayout>
   );
