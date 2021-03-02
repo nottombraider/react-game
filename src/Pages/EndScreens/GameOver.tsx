@@ -1,29 +1,54 @@
-import { FunctionComponent } from "react";
+import { FunctionComponent, useEffect } from "react";
 import { navigate, RouteComponentProps } from "@reach/router";
 import { DefaultLayout } from "Layouts/DefaultLayout";
-import { getDataFromLocalStorage } from "../../utils/getDataFromLocalStorage";
+import { CurrentScoreType } from "types";
+import { resetGameState } from "gameHandlers/resetGame";
+import "./style-GameOver.css";
+import {
+  getDataFromLocalStorage,
+  StorageKeys,
+  setScoreToTableScore,
+} from "utils";
+
+export const DEFAULT_CURRENT_SCORE: CurrentScoreType = {
+  time: null,
+  score: 0,
+};
 
 export const GameOver: FunctionComponent<RouteComponentProps> = () => {
-  const score = getDataFromLocalStorage("currentScore");
+  const score = getDataFromLocalStorage<CurrentScoreType>(
+    StorageKeys.CurrentScore,
+    DEFAULT_CURRENT_SCORE
+  );
+
+  useEffect(() => {
+    setScoreToTableScore();
+    resetGameState();
+  }, []);
 
   return (
     <DefaultLayout>
-      <div className="flex column align-center">
-        <h1 className="animate__animated animate__pulse animate__infinite">
-          Game Over!
-        </h1>
+      <main className="game-over-screen-container flex column align-center space-around">
+        <div className="flex column align-center">
+          <h1 className="animate__animated animate__pulse animate__infinite">
+            Game Over!
+          </h1>
 
-        <div>
-          <span>Your score: </span>
-          <span>{score.score}</span>
+          <div>
+            <span>Your score: </span>
+            <span>{score.score}</span>
+          </div>
         </div>
-      </div>
+        <div className="game-over-button-container flex column justify-center">
+          <button className="button-x" onClick={() => navigate("/score")}>
+            Score board
+          </button>
 
-      <button onClick={() => navigate("/score")}>
-        Check your 10 best last scores
-      </button>
-
-      <button onClick={() => navigate("/")}>New Game</button>
+          <button className="button-x" onClick={() => navigate("/")}>
+            New Game
+          </button>
+        </div>
+      </main>
     </DefaultLayout>
   );
 };
