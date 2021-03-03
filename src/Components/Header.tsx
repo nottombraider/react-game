@@ -1,6 +1,3 @@
-import React from "react";
-import "../styles/utility-styles.css";
-import "./style-Header.css";
 import { navigate } from "@reach/router";
 import { RoutPaths } from "Pages/routes";
 

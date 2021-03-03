@@ -1,7 +1,6 @@
 import { FunctionComponent, useEffect } from "react";
 import { navigate, RouteComponentProps } from "@reach/router";
 import { DefaultLayout } from "Layouts/DefaultLayout";
-import "./style-WinScreen.css";
 import { DEFAULT_CURRENT_SCORE } from "./GameOver";
 import { CurrentScoreType } from "types";
 import { resetGameState } from "gameHandlers/resetGame";

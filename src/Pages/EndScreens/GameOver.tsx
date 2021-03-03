@@ -3,7 +3,6 @@ import { navigate, RouteComponentProps } from "@reach/router";
 import { DefaultLayout } from "Layouts/DefaultLayout";
 import { CurrentScoreType } from "types";
 import { resetGameState } from "gameHandlers/resetGame";
-import "./style-GameOver.css";
 import { setScoreToTableScore } from "gameHandlers";
 import {
   getDataFromLocalStorage,
@@ -42,14 +41,14 @@ export const GameOver: FunctionComponent<RouteComponentProps> = () => {
         </div>
         <div className="game-over-button-container flex column justify-center">
           <button
-            className="button-x"
+            className="end-screen-button"
             onClick={() => navigate(RoutPaths.ScoreScreen)}
           >
             Score board
           </button>
 
           <button
-            className="button-x"
+            className="end-screen-button"
             onClick={() => navigate(RoutPaths.GameScreen)}
           >
             New Game

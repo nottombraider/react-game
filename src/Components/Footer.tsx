@@ -1,4 +1,3 @@
-import "./style-Footer.css";
 import footerLogo from "../pictures/nottombraider-github-logo.jpg";
 
 export const Footer = () => {

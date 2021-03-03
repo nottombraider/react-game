@@ -1,8 +1,5 @@
 import { DefaultLayout } from "Layouts/DefaultLayout";
 
-import "./style-Preloader.css";
-import "../styles/utility-styles.css";
-
 export const Preloader = () => {
   return (
     <DefaultLayout>

@@ -6,7 +6,6 @@ import {
   getDataFromLocalStorage,
   StorageKeys,
 } from "services/getDataFromLocalStorage";
-import "./style-ScoreScreen.css";
 import { RoutPaths } from "Pages/routes";
 
 export const ScoreScreen: FunctionComponent<RouteComponentProps> = () => {
