@@ -50,7 +50,7 @@ export const GameOver: FunctionComponent<RouteComponentProps> = () => {
 
           <button
             className="button-x"
-            onClick={() => navigate(RoutPaths.StartScreen)}
+            onClick={() => navigate(RoutPaths.GameScreen)}
           >
             New Game
           </button>

@@ -1,4 +1,5 @@
 import { useNavigate } from "@reach/router";
+import { resetGameState } from "gameHandlers/resetGame";
 import { RoutPaths } from "Pages/routes";
 import "./style-StartScreen.css";
 
@@ -8,17 +9,30 @@ export const StartScreenMainGameControls = () => {
   return (
     <main className="main-content-wrapper flex column align-center justify-center">
       <div className="flex column">
+        {localStorage.getItem("currentVariants") ? (
+          <button
+            onClick={() => {
+              navigate(RoutPaths.GameScreen);
+            }}
+            className="main-game-button"
+          >
+            Continue Game
+          </button>
+        ) : null}
         <button
-          onClick={() => navigate(RoutPaths.GameScreen)}
+          onClick={() => {
+            resetGameState();
+            navigate(RoutPaths.GameScreen);
+          }}
           className="main-game-button"
         >
-          Start Game
+          Start New Game
         </button>
         <button
-          onClick={() => navigate(RoutPaths.SettingsScreen)}
+          onClick={() => navigate(RoutPaths.ScoreScreen)}
           className="main-game-button"
         >
-          Settings
+          scores
         </button>
       </div>
     </main>
