@@ -4,3 +4,4 @@ export * from "./getUnseenFlags";
 export * from "./resetGame";
 export * from "./getUpdatedUserFlags";
 export * from "./setScoreToTableScore";
+export * from "./getStepScore";

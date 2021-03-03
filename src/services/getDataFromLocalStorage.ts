@@ -3,6 +3,7 @@ export enum StorageKeys {
   CurrentScore = "currentScore",
   CurrentVariants = "currentVariants",
   SeenFlags = "seenFlags",
+  StepCounter = "stepCounter",
 }
 
 export const localStorageHasKey = (key: StorageKeys) =>

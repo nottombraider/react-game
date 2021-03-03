@@ -32,6 +32,7 @@ export const GameScreen = ({ countryFlags }: GameScreenProps) => {
         answerVariants={answerVariants}
         userFlags={userFlags}
         setUserFlags={setUserFlags}
+        allCountryFlagsLength={countryFlags.length}
       />
     </DefaultLayout>
   );
