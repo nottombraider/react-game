@@ -1,7 +1,7 @@
 import { useNavigate } from "@reach/router";
 import { resetGameState } from "gameHandlers/resetGame";
 import { RoutPaths } from "Pages/routes";
-import "./style-StartScreen.css";
+import { StorageKeys } from "services/getDataFromLocalStorage";
 
 export const StartScreenMainGameControls = () => {
   const navigate = useNavigate();
@@ -9,7 +9,7 @@ export const StartScreenMainGameControls = () => {
   return (
     <main className="main-content-wrapper flex column align-center justify-center">
       <div className="flex column">
-        {localStorage.getItem("currentVariants") ? (
+        {localStorage.getItem(StorageKeys.CurrentVariants) ? (
           <button
             onClick={() => {
               navigate(RoutPaths.GameScreen);
