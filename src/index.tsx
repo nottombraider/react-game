@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "styles/index.css";
 import "styles/utility-styles.css";
+import "animate.css/animate.css";
 import FlagQuizGame from "./FlagQuizGame";
 import reportWebVitals from "./reportWebVitals";
 
