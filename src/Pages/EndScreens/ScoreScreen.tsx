@@ -31,23 +31,23 @@ export const ScoreScreen: FunctionComponent<RouteComponentProps> = () => {
               );
             })
           ) : (
-            <div className="score-nav-button-wrapper flex column space-around">
-              <span>You have no scores yet</span>
-              <button
-                className="score-buttons"
-                onClick={() => navigate(RoutPaths.StartScreen)}
-              >
-                back
-              </button>
-              <button
-                className="score-buttons"
-                onClick={() => navigate(RoutPaths.GameScreen)}
-              >
-                start game
-              </button>
-            </div>
+            <span>You have no scores yet</span>
           )}
         </ul>
+        <div className="score-nav-button-wrapper flex space-around">
+          <button
+            className="score-buttons"
+            onClick={() => navigate(RoutPaths.StartScreen)}
+          >
+            back
+          </button>
+          <button
+            className="score-buttons"
+            onClick={() => navigate(RoutPaths.GameScreen)}
+          >
+            start game
+          </button>
+        </div>
       </div>
     </DefaultLayout>
   );
