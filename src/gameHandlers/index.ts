@@ -5,3 +5,4 @@ export * from "./resetGame";
 export * from "./getUpdatedUserFlags";
 export * from "./setScoreToTableScore";
 export * from "./getStepScore";
+export * from "./getSortedScores";

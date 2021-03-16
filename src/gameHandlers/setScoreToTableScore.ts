@@ -1,3 +1,4 @@
+import { getSortedScores } from "gameHandlers";
 import { DEFAULT_CURRENT_SCORE } from "Pages/EndScreens/GameOver";
 import { ScoreListType, CurrentScoreType } from "types";
 import {
@@ -18,14 +19,14 @@ export const setScoreToTableScore = () => {
   if (scoresInLocalStorage.length < 10) {
     scoresInLocalStorage.push(userCurrentScore);
 
-    scoresInLocalStorage.sort((itemA, itemB) => itemA.score - itemB.score);
+    scoresInLocalStorage.sort(getSortedScores);
     localStorage.setItem("scores", JSON.stringify(scoresInLocalStorage));
   }
 
   if (scoresInLocalStorage.length >= 10) {
-    scoresInLocalStorage.sort((itemA, itemB) => itemA.score - itemB.score);
+    scoresInLocalStorage.sort(getSortedScores);
     scoresInLocalStorage.splice(0, 1, userCurrentScore);
-    scoresInLocalStorage.sort((itemA, itemB) => itemA.score - itemB.score);
+    scoresInLocalStorage.sort(getSortedScores);
     localStorage.setItem("scores", JSON.stringify(scoresInLocalStorage));
   }
 };
