@@ -1,0 +1,373 @@
+body {
+  margin: 0 auto;
+  max-width: 1024px;
+  height: 100vh;
+  max-height: 868px;
+  min-width: 320px;
+  background-color: #eee;
+}
+
+#root {
+  max-width: 1024px;
+  height: 100vh;
+  max-height: 868px;
+  min-width: 320px;
+}
+
+.flag-quiz-game-wrapper {
+  max-width: 1024px;
+  height: 100vh;
+  max-height: 868px;
+  min-width: 320px;
+  background-color: #fff;
+}
+
+.main-content-wrapper {
+  height: inherit;
+}
+
+.flex {
+  display: flex;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.space-around {
+  justify-content: space-around;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.footer {
+  box-shadow: 0 0.5rem 2rem -0.1rem #a4a4a4;
+  padding: 1rem 0 0 0.7rem;
+}
+
+.footer-logo {
+  width: 200px;
+}
+
+.footer-rsschool-logo {
+  width: 75px;
+}
+
+.main-game-button {
+  margin-bottom: 2.5rem;
+  font-size: 2rem;
+  text-transform: uppercase;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  border-block-start-color: #8a92ff;
+  border-inline-end-color: #8a92ff;
+  border-block-end-color: #8a92ff;
+  border-inline-start-color: #8a92ff;
+  background-color: #fff;
+  color: #19207b;
+}
+
+.main-game-button:hover {
+  border-block-start-color: #8a92ff;
+  border-inline-end-color: #8a92ff;
+  border-block-end-color: #8a92ff;
+  border-inline-start-color: #8a92ff;
+  color: #19207b;
+  background-color: #c9d2ff;
+  box-shadow: #8a92ff;
+  box-shadow: 0 0 0.5rem #8d94ff;
+}
+
+.header {
+  box-shadow: 0 0.5rem 2rem -0.1rem #a4a4a4;
+  padding: 0 3rem;
+}
+
+.header__logo {
+  position: relative;
+  margin: 1rem;
+}
+
+.header__text-logo {
+  font-size: 3rem;
+  margin: 1rem;
+}
+
+.header__sub-text {
+  font-size: 1rem;
+  font-weight: 900;
+  transform: rotate(-30deg);
+  position: absolute;
+  left: -0.5rem;
+  top: 0.6rem;
+  color: #c70104;
+  border: 2px solid #c70104;
+}
+
+.loading-main-text {
+  font-size: 2.5rem;
+  margin: 1rem;
+  color: #333333;
+}
+
+.loading-circle {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  border: 5px solid #eeeeee;
+  border-left-color: #ffc0cb;
+  border-top-color: #ffc0cb;
+  animation: rotate 500ms infinite linear;
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+.loading-secondary-text {
+  color: #c1c1c1;
+}
+
+.game-over-screen-container {
+  height: inherit;
+}
+
+.game-over-button-container {
+  width: fit-content;
+}
+
+.end-screen-button {
+  font-size: 1.5rem;
+  padding: 1rem 2rem;
+  margin-bottom: 2rem;
+  border-radius: 1rem;
+  border-block-start-color: #8a92ff;
+  border-inline-end-color: #8a92ff;
+  border-block-end-color: #8a92ff;
+  border-inline-start-color: #8a92ff;
+  background-color: #fff;
+  color: #19207b;
+}
+
+.congratulation-header {
+  margin-bottom: 4rem;
+}
+
+.score-info {
+  font-size: 1.3rem;
+}
+
+.score-list-wrapper {
+  list-style: none;
+  text-align: center;
+  padding: 0 10rem;
+  width: -webkit-fill-available;
+  min-height: 320px;
+  overflow-y: scroll;
+}
+
+.score-wrapper {
+  font-size: 1.1rem;
+  padding: 0.3rem 1rem;
+  border-bottom: 1px solid #333;
+}
+
+.score-nav-button-wrapper {
+  height: 100%;
+}
+
+.score-buttons {
+  text-transform: uppercase;
+  padding: 1rem;
+  margin-left: 3rem;
+  border-radius: 1rem;
+  border-block-start-color: #8a92ff;
+  border-inline-end-color: #8a92ff;
+  border-block-end-color: #8a92ff;
+  border-inline-start-color: #8a92ff;
+  background-color: #fff;
+  color: #19207b;
+}
+
+.game-info {
+  align-self: flex-start;
+  width: -webkit-fill-available;
+  font-size: 1.3rem;
+  margin: 0 3rem;
+}
+
+.step-counter {
+  margin-top: 0.5rem;
+}
+
+.pause-button {
+  text-transform: uppercase;
+  padding: 1rem;
+  margin-left: 1rem;
+  border-radius: 1rem;
+  border-block-start-color: #8a92ff;
+  border-inline-end-color: #8a92ff;
+  border-block-end-color: #8a92ff;
+  border-inline-start-color: #8a92ff;
+  background-color: #fff;
+  color: #19207b;
+}
+
+.main-flag-wrapper {
+  border: 1px solid #333;
+}
+
+.main-flag-img {
+  max-width: 400px;
+  width: 350px;
+  max-height: 200px;
+  height: auto;
+}
+
+.answer-wrapper {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.answer-button-li {
+  width: 40%;
+}
+
+.answer-button {
+  text-transform: uppercase;
+  width: -webkit-fill-available;
+  font-size: 1.5rem;
+  padding: 1rem 2rem;
+  margin-bottom: 2rem;
+  border-radius: 1rem;
+  border-block-start-color: #8a92ff;
+  border-inline-end-color: #8a92ff;
+  border-block-end-color: #8a92ff;
+  border-inline-start-color: #8a92ff;
+  background-color: #fff;
+  color: #19207b;
+}
+
+.answer-button:hover {
+  border-block-start-color: #8a92ff;
+  border-inline-end-color: #8a92ff;
+  border-block-end-color: #8a92ff;
+  border-inline-start-color: #8a92ff;
+  color: #19207b;
+  background-color: #c9d2ff;
+  box-shadow: #8a92ff;
+  box-shadow: 0 0 0.5rem #8d94ff;
+}
+
+/*for iPhone5/SE, Galaxy S5, Motorola G4 or other devices with screen width from 320px to 360px*/
+@media screen and (min-width: 320px) and (max-width: 360px) {
+  .header {
+    padding: 0 1rem;
+  }
+
+  .header__logo {
+    margin: 0.5rem;
+  }
+
+  .header__text-logo {
+    font-size: 2rem;
+    margin: 0.5rem;
+  }
+
+  .header__sub-text {
+    font-size: 0.5rem;
+    left: -0.4rem;
+    top: 0.5rem;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .main-game-button {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+  }
+}
+
+/*for iPhone6/7/8/Plus/X, Pixel 2/2XL and other devices with screen width from 361px to 480px*/
+@media screen and (min-width: 361px) and (max-width: 480px) {
+  .header {
+    padding: 0 1rem;
+  }
+
+  .header__text-logo {
+    font-size: 2.5rem;
+    margin: 0.5rem;
+  }
+
+  .header__sub-text {
+    font-size: 0.8rem;
+    left: -0.7rem;
+    top: 0.3rem;
+  }
+}
+
+@media screen and (min-width: 421px) and (max-width: 768px) {
+  .score-list-wrapper {
+    padding: 0 5rem;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 420px) {
+  .score-list-wrapper {
+    padding: 0 1rem;
+  }
+
+  .score-buttons {
+    margin: 0;
+  }
+}
+
+/*for iPhone5/SE, Galaxy S5, Motorola G4 or other devices with screen width from 320px to 360px*/
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .game-info {
+    margin: 0 1rem;
+  }
+
+  .score-info {
+    font-size: 1rem;
+    order: 2;
+  }
+
+  .main-flag-img {
+    max-width: 270px;
+    width: 250px;
+    max-height: 150px;
+    height: auto;
+    order: 1;
+  }
+
+  .answer-wrapper {
+    order: 3;
+  }
+
+  .answer-button-li {
+    width: 100%;
+  }
+
+  .answer-button {
+    font-size: 0.7rem;
+    margin: 0;
+  }
+} ;
