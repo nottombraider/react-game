@@ -35,8 +35,7 @@ export const GameOver: FunctionComponent<RouteComponentProps> = () => {
           </h1>
 
           <div>
-            <span>Your score: </span>
-            <span>{score.score}</span>
+            <span>Your score: {score.score}</span>
           </div>
         </div>
         <div className="game-over-button-container flex column justify-center">
