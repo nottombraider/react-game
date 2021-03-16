@@ -61,9 +61,10 @@ export const GameStepper = ({
 
   useEffect(() => {
     const currentVariants: CurrentVariants = {
-      correct: correctVariant.id,
-      answerVariants: answerVariants.map((item) => item.id),
+      correctId: correctVariant.id,
+      answerVariantsId: answerVariants.map((item) => item.id),
     };
+    
     localStorage.setItem(
       StorageKeys.CurrentVariants,
       JSON.stringify(currentVariants)

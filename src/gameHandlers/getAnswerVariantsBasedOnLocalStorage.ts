@@ -8,10 +8,10 @@ export const getAnswerVariantsBasedOnLocalStorage = (
   countryFlags: CountryFlags
 ) => {
   const {
-    answerVariants: answerVariantsIDs,
+    answerVariantsId: answerVariantsIDs,
   } = getDataFromLocalStorage<CurrentVariants>(StorageKeys.CurrentVariants, {
-    correct: null,
-    answerVariants: [],
+    correctId: null,
+    answerVariantsId: [],
   });
 
   return answerVariantsIDs.reduce((acc, id) => {

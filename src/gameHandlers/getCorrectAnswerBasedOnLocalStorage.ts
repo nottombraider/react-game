@@ -8,10 +8,10 @@ export const getCorrectAnswerBasedOnLocalStorage = (
   countryFlags: CountryFlags
 ) => {
   const {
-    correct: correctVariantID,
+    correctId: correctVariantID,
   } = getDataFromLocalStorage<CurrentVariants>(StorageKeys.CurrentVariants, {
-    correct: null,
-    answerVariants: [],
+    correctId: null,
+    answerVariantsId: [],
   });
   const seenFlags = getDataFromLocalStorage<SeenFlagsIdList>(
     StorageKeys.SeenFlags,

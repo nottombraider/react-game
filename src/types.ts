@@ -18,7 +18,7 @@ export type CurrentScoreType = {
 };
 export type ScoreListType = Array<CurrentScoreType>;
 export type CurrentVariants = {
-  correct: CountryFlag["id"] | null;
-  answerVariants: Array<CountryFlag["id"]>;
+  correctId: CountryFlag["id"] | null;
+  answerVariantsId: Array<CountryFlag["id"]>;
 };
 export type SeenFlagsIdList = Array<CountryFlag["id"]>;
