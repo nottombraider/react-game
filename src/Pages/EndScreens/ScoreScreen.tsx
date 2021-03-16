@@ -17,7 +17,7 @@ export const ScoreScreen: FunctionComponent<RouteComponentProps> = () => {
   return (
     <DefaultLayout>
       <div className="flex column align-center">
-        <h1>Your scores:</h1>
+        <h2>Your scores:</h2>
         <ul className="score-list-wrapper">
           {userScores.length ? (
             userScores.map(({ time, score }) => {
